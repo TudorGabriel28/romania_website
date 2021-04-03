@@ -1,0 +1,327 @@
+@import "main.css";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}
+
+main {
+  padding-top: 10vh;
+}
+
+.navbar {
+  background: white;
+  color: black;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fixed-background {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  padding: 10vh 10vw;
+  background: url("../img/steag.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.text-box {
+  background: white;
+  padding: 5em;
+  box-shadow: none;
+}
+.text-box p {
+  max-width: 50ch;
+  margin-bottom: 2em;
+}
+.text-box .title {
+  font-size: 3rem;
+}
+.text-box .line {
+  width: 10%;
+}
+.text-box .btn {
+  opacity: 0;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  background: transparent;
+  border: 1px solid black;
+}
+.text-box .btn:hover {
+  background: #e74c3c;
+  border: white;
+  color: white;
+}
+
+.grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.color-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six {
+  display: grid;
+  grid-template-areas: "col1 col2";
+  -moz-column-gap: 2em;
+       column-gap: 2em;
+  padding: 5em 3em;
+}
+
+.one,
+.three,
+.five {
+  grid-template-columns: 1.5fr 1fr;
+}
+.one .grid-img,
+.three .grid-img,
+.five .grid-img {
+  grid-area: col1;
+}
+.one .grid-text,
+.three .grid-text,
+.five .grid-text {
+  grid-area: col2;
+}
+
+.two,
+.four,
+.six {
+  grid-template-columns: 1fr 1.5fr;
+}
+.two .grid-img,
+.four .grid-img,
+.six .grid-img {
+  grid-area: col2;
+  width: 100%;
+  height: 100%;
+}
+.two .grid-text,
+.four .grid-text,
+.six .grid-text {
+  grid-area: col1;
+}
+
+.grid-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.grid-text .title {
+  opacity: 0;
+  font-size: 3.4rem;
+  margin-bottom: 0.5em;
+}
+.grid-text p {
+  opacity: 0;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  font-size: 1.125rem;
+  max-width: 40ch;
+}
+
+.grid-img {
+  background-position: center;
+  background-size: cover;
+}
+
+.orase .one .grid-img {
+  background-image: url("../img/bucuresti.jpg");
+}
+.orase .two .grid-img {
+  background-image: url("../img/cluj.jpg");
+}
+.orase .three .grid-img {
+  background-image: url("../img/brasov.jpg");
+}
+.orase .four .grid-img {
+  background-image: url("../img/timisoara.jpg");
+}
+.orase .five .grid-img {
+  background-image: url("../img/oradea.jpg");
+}
+.orase .six .grid-img {
+  background-image: url("../img/craiova.jpg");
+}
+
+.litoral .fixed-background {
+  background-image: url("../img/litoral-background.jpg");
+}
+.litoral .one .grid-img {
+  background-image: url("../img/ponton-mamaia.jpg");
+}
+.litoral .two .grid-img {
+  background-image: url("../img/casino-constanta.jpg");
+}
+.litoral .three .grid-img {
+  background-image: url("../img/obelisc.jpg");
+}
+.litoral .four .grid-img {
+  background-image: url("../img/epava.jpg");
+}
+
+.bucegi .fixed-background {
+  background-image: url("../img/bucegi-background.jpg");
+}
+.bucegi .one .grid-img {
+  background-image: url("../img/sfinx.jpg");
+}
+.bucegi .two .grid-img {
+  background-image: url("../img/crucea-caraiman.jpg");
+}
+.bucegi .three .grid-img {
+  background-image: url("../img/vf-omu.jpg");
+}
+.bucegi .four .grid-img {
+  background-image: url("../img/babele.jpg");
+}
+
+.fagaras .fixed-background {
+  background-image: url("../img/fagaras-background.jpg");
+}
+.fagaras .one .grid-img {
+  background-image: url("../img/transfagarasan.jpg");
+}
+.fagaras .two .grid-img {
+  background-image: url("../img/balea.jpg");
+}
+.fagaras .three .grid-img {
+  background-image: url("../img/cascada-balea.png");
+}
+.fagaras .four .grid-img {
+  background-image: url("../img/vf-moldoveanu.jpg");
+}
+
+.delta .fixed-background {
+  background-image: url("../img/delta-background.jpg");
+}
+.delta .one .grid-img {
+  background-image: url("../img/tulcea.jpg");
+}
+.delta .two .grid-img {
+  background-image: url("../img/murighiol.jpg");
+}
+.delta .three .grid-img {
+  background-image: url("../img/jurilovca.jpg");
+}
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .text-box {
+    padding: 1.5em;
+  }
+  .text-box p {
+    font-size: 1.1rem;
+  }
+  .text-box .title {
+    font-size: 2.3rem;
+  }
+
+  .one,
+.two,
+.three,
+.four,
+.five,
+.six {
+    width: 100%;
+    display: grid;
+    padding: 0;
+    grid-template-areas: "col1" "col2";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .one .grid-img,
+.two .grid-img,
+.three .grid-img,
+.four .grid-img,
+.five .grid-img,
+.six .grid-img {
+    grid-area: col2;
+  }
+  .one .grid-text,
+.two .grid-text,
+.three .grid-text,
+.four .grid-text,
+.five .grid-text,
+.six .grid-text {
+    grid-area: col1;
+  }
+
+  .grid-text {
+    align-items: center;
+    justify-content: center;
+    padding: 5em 1em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .navlist-item {
+    padding: 0 1em;
+  }
+
+  .text-box {
+    padding: 1.5em;
+  }
+  .text-box p {
+    font-size: 1.125rem;
+  }
+  .text-box .title {
+    font-size: 1.8rem;
+  }
+
+  .one,
+.two,
+.three,
+.four,
+.five,
+.six {
+    width: 100%;
+    display: grid;
+    padding: 0;
+    grid-template-areas: "col1" "col2";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .one .grid-img,
+.two .grid-img,
+.three .grid-img,
+.four .grid-img,
+.five .grid-img,
+.six .grid-img {
+    grid-area: col2;
+  }
+  .one .grid-text,
+.two .grid-text,
+.three .grid-text,
+.four .grid-text,
+.five .grid-text,
+.six .grid-text {
+    grid-area: col1;
+  }
+
+  .grid-text {
+    align-items: center;
+    justify-content: center;
+    padding: 5em 1em;
+  }
+  .grid-text .title {
+    font-size: 2.5rem;
+  }
+}/*# sourceMappingURL=pattern.css.map */

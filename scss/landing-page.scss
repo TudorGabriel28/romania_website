@@ -1,0 +1,251 @@
+@import "main.css";
+
+//Colors
+$color-text: #f4f4f4;
+
+//First section - Home Intro -- start
+.homeintro {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-image: url("../img/transfagarasan4.jpg");
+  background-size: cover;
+  background-position: center;
+  color: $color-text;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 10% 7%;
+}
+
+//First section - Home Intro -- end
+
+//Third section - Grid -- start
+
+.grid {
+  position: relative;
+  height: 200vh;
+  width: 100%;
+  color: $color-text;
+  box-shadow: 0 0 10px #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0;
+  grid-template-areas:
+    "one two"
+    "three four";
+
+  .one,
+  .two,
+  .three,
+  .four {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .one {
+    background-image: url("../img/mamaia.jpg");
+    grid-area: "one";
+  }
+  .two {
+    background-image: url("../img/bucegi.jpg");
+    grid-area: "two";
+  }
+  .three {
+    background-image: url("../img/transfagarasan2.jpg");
+    grid-area: "three";
+  }
+  .four {
+    background-image: url("../img/delta.jpg");
+    grid-area: "four";
+  }
+}
+
+.homegrid-container {
+  opacity: 0;
+  height: 100%;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 3em;
+
+  p {
+    max-width: 55ch;
+  }
+
+  a {
+    margin: 2em 0;
+  }
+}
+//Third section - Grid -- end
+
+//Fourth section - more -- start
+.more {
+  height: 40vh;
+  box-shadow: none;
+  .line {
+    margin-bottom: 0;
+  }
+}
+//Fourth section - more -- end
+
+//Fifth section - Horizontal images scroll -- start
+.scroll-container {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-text;
+  padding: 0 5%;
+  margin-bottom: 5%;
+}
+
+.scroll-menu {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  background: inherit;
+
+  .item {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 33.3%;
+
+    img {
+      width: 100%;
+      height: calc(100% - 2.9em);
+      object-fit: cover;
+    }
+
+    p {
+      font-size: 2rem;
+      padding: 0.5em 0;
+    }
+  }
+}
+
+.arrow {
+  img {
+    width: 35px;
+    height: 35px;
+  }
+
+  &.left {
+    padding-right: 5px;
+  }
+  &.right {
+    padding-left: 5px;
+  }
+}
+//Fifth section -- end
+
+//Tablets
+@media screen and (min-width: 430px) and (max-width: 700px) {
+  .title {
+    font-size: 2.7rem;
+  }
+
+  .grid {
+    position: relative;
+    height: 400vh;
+    width: 100%;
+    color: $color-text;
+    box-shadow: 0 0 10px #000000;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 0;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four";
+  }
+
+  .scroll-container {
+    height: auto;
+    padding: 0;
+  }
+
+  .scroll-menu {
+    overflow: auto;
+    white-space: normal;
+    .item {
+      width: 100%;
+    }
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+//Mobile phones
+@media screen and (max-width: 430px) {
+  .navlist-item {
+    padding: 0 1em;
+  }
+
+  .title {
+    font-size: 2.7rem;
+  }
+
+  .text-box {
+    .title {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .grid {
+    position: relative;
+    height: 400vh;
+    width: 100%;
+    color: $color-text;
+    box-shadow: 0 0 10px #000000;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 0;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four";
+  }
+
+  .scroll-container {
+    height: auto;
+    padding: 0;
+  }
+
+  .scroll-menu {
+    overflow: auto;
+    white-space: normal;
+    .item {
+      width: 100%;
+    }
+  }
+
+  .arrow {
+    display: none;
+  }
+}

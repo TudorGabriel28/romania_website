@@ -1,0 +1,263 @@
+//Fonts
+@font-face {
+  font-family: "MrEavesXLMod";
+  src: url("../fonts/MrEavesXLModOT-Book.ttf");
+}
+
+@font-face {
+  font-family: "Kepler";
+  src: url("../fonts/KeplerStdDisp.otf");
+}
+
+//Colors
+$color-text: #f4f4f4;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: $color-text;
+  font-family: "MrEavesXLMod", sans-serif;
+  font-weight: 300;
+  opacity: 0;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+//Repeateadly used classes -- start
+
+.title {
+  font-family: "Kepler", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 400;
+  color: currentColor;
+}
+
+.italic {
+  font-style: italic;
+}
+
+//Line for design
+.line {
+  border-top: 3px solid #bd9e57;
+  width: 20%;
+  margin: 0.625em 0 0.625em 0;
+}
+
+//Pattern for a text (Title, line, paragraph) section
+.text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: inset 0 0 10px #000000;
+  padding: 5em 0;
+
+  .title {
+    opacity: 0;
+    max-width: 41ch;
+    margin: 0 1.5em;
+  }
+
+  .line {
+    opacity: 0;
+    margin-bottom: 3%;
+    animation-delay: 0.4s;
+  }
+
+  p {
+    opacity: 0;
+    max-width: 85ch;
+    animation-delay: 0.5s;
+    margin: 0 0.6em;
+  }
+}
+
+//Pattern for Buttons
+.btn {
+  font-family: "MrEavesXLMod", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  color: currentColor;
+  border: 1.5px solid $color-text;
+  padding: 0.5em 2em;
+  background: rgba(black, 0.4);
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    background-color: $color-text;
+    color: black;
+  }
+}
+
+//Element used for scrolling when button clicked
+#intro-scroll {
+  position: absolute;
+  bottom: 10vh;
+}
+
+//For Darkening the images
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(black, 0.5);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+//Repeateadly used classes -- end
+
+//Navigation bar --start
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 5vh 0;
+  background: transparent;
+  color: white;
+  transition: background 250ms ease-in;
+
+  &.scrolled {
+    color: black;
+    background: white;
+    box-shadow: 0 3px 20px rgba(black, 0.2);
+  }
+}
+
+.navlist {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  transition: transform 250ms ease-in-out;
+
+  &-item {
+    padding: 0 1.7em;
+  }
+
+  &-link {
+    padding-bottom: 0.7em;
+    position: relative; //for dynamic line to work
+    color: inherit;
+
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    //Dynamic line below text
+    &:after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: scaleX(0);
+      background: currentColor;
+      transition: transform 150ms ease-in-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+}
+//Navigation bar --end
+
+//The footer -- start
+footer {
+  z-index: 2;
+  width: 100%;
+  height: 200px;
+  color: white;
+  background: rgb(36, 35, 35);
+  text-align: center;
+  padding: 10vh 0;
+}
+//The footer -- end
+
+//Animations
+
+//Slide in from right animation
+.fromright {
+  opacity: 0;
+  animation-name: slideright;
+  animation-delay: 0.5s;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideright {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+
+  70% {
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+//Slide up animation
+.slideup {
+  animation-name: slideup;
+  animation-delay: 0.2s;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideup {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+//Fade In animation
+.fade-in {
+  animation-name: fade-in;
+  animation-delay: 0.3s;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

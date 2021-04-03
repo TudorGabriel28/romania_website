@@ -1,0 +1,213 @@
+@import "main.css";
+.homeintro {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background-image: url("../img/transfagarasan4.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #f4f4f4;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 10% 7%;
+}
+
+.grid {
+  position: relative;
+  height: 200vh;
+  width: 100%;
+  color: #f4f4f4;
+  box-shadow: 0 0 10px #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 0;
+  grid-template-areas: "one two" "three four";
+}
+.grid .one,
+.grid .two,
+.grid .three,
+.grid .four {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.grid .one {
+  background-image: url("../img/mamaia.jpg");
+  grid-area: "one";
+}
+.grid .two {
+  background-image: url("../img/bucegi.jpg");
+  grid-area: "two";
+}
+.grid .three {
+  background-image: url("../img/transfagarasan2.jpg");
+  grid-area: "three";
+}
+.grid .four {
+  background-image: url("../img/delta.jpg");
+  grid-area: "four";
+}
+
+.homegrid-container {
+  opacity: 0;
+  height: 100%;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 3em;
+}
+.homegrid-container p {
+  max-width: 55ch;
+}
+.homegrid-container a {
+  margin: 2em 0;
+}
+
+.more {
+  height: 40vh;
+  box-shadow: none;
+}
+.more .line {
+  margin-bottom: 0;
+}
+
+.scroll-container {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  padding: 0 5%;
+  margin-bottom: 5%;
+}
+
+.scroll-menu {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  background: inherit;
+}
+.scroll-menu .item {
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  width: 33.3%;
+}
+.scroll-menu .item img {
+  width: 100%;
+  height: calc(100% - 2.9em);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.scroll-menu .item p {
+  font-size: 2rem;
+  padding: 0.5em 0;
+}
+
+.arrow img {
+  width: 35px;
+  height: 35px;
+}
+.arrow.left {
+  padding-right: 5px;
+}
+.arrow.right {
+  padding-left: 5px;
+}
+
+@media screen and (min-width: 430px) and (max-width: 700px) {
+  .title {
+    font-size: 2.7rem;
+  }
+
+  .grid {
+    position: relative;
+    height: 400vh;
+    width: 100%;
+    color: #f4f4f4;
+    box-shadow: 0 0 10px #000000;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 0;
+    grid-template-areas: "one" "two" "three" "four";
+  }
+
+  .scroll-container {
+    height: auto;
+    padding: 0;
+  }
+
+  .scroll-menu {
+    overflow: auto;
+    white-space: normal;
+  }
+  .scroll-menu .item {
+    width: 100%;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+@media screen and (max-width: 430px) {
+  .navlist-item {
+    padding: 0 1em;
+  }
+
+  .title {
+    font-size: 2.7rem;
+  }
+
+  .text-box .title {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .grid {
+    position: relative;
+    height: 400vh;
+    width: 100%;
+    color: #f4f4f4;
+    box-shadow: 0 0 10px #000000;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 0;
+    grid-template-areas: "one" "two" "three" "four";
+  }
+
+  .scroll-container {
+    height: auto;
+    padding: 0;
+  }
+
+  .scroll-menu {
+    overflow: auto;
+    white-space: normal;
+  }
+  .scroll-menu .item {
+    width: 100%;
+  }
+
+  .arrow {
+    display: none;
+  }
+}/*# sourceMappingURL=landing-page.css.map */
