@@ -1,0 +1,24 @@
+{
+  "name": "romania_website",
+  "version": "1.0.0",
+  "description": "Presentation website about travelling to Romania",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TudorGabriel28/romania_website.git"
+  },
+  "author": "Tudor Gabriel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TudorGabriel28/romania_website/issues"
+  },
+  "homepage": "https://github.com/TudorGabriel28/romania_website#readme"
+}
